@@ -1,0 +1,48 @@
+<?php
+namespace App\Models;
+
+class User{
+    private $nom;
+    private $competences;
+
+    public function __construct($nom=''){
+        $this->nom=$nom;
+        $this->competences=[];
+    }
+
+    /**
+     * @return string
+     */
+    public function getNom(){
+        return $this->nom;
+    }
+
+    /**
+     * @param string $nom
+     */
+    public function setNom($nom){
+        $this->nom = $nom;
+    }
+
+    /**
+     * @return array
+     */
+    public function getCompetences(){
+        return $this->competences;
+    }
+
+    /**
+     * @param array $competences
+     */
+    public function setCompetences($competences){
+        $this->competences = $competences;
+    }
+
+    public function addCompetence($competence){
+        $this->competences[]=$competence;
+    }
+
+    public function __toString(){
+        return $this->nom;
+    }
+}

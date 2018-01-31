@@ -1,0 +1,8 @@
+<h1>Utilisateurs</h1>
+{{user}}
+<h2>Compétences de l'utilisateur</h2>
+<ul>
+    {% for comp in user.getCompetences() %}
+        <li>{{comp}}</li>
+    {% endfor %}
+</ul>
