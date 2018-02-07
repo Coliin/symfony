@@ -1,12 +1,17 @@
 {% extends 'base.html.twig' %}
-{% block title %}sfjg{% endblock %}
+{% block title %}Liste des contacts{% endblock %}
 {% block stylesheets %}{% endblock %}
 {% block body %}
-<table>
+<table class="ui table">
     <caption>Contacts</caption>
 {% for c in contacts.getAll %}
     <tr>
         <td>{{ c.nom }}</td><td>{{ c.prenom }}</td><td>{{ c.mail }}</td><td>{{ c.tel }}</td><td>{{ c.mobile }}</td>
+        <td>
+            <a href="{{  path('contact_edit',{"index": loop.index}) }}" class="ui icon button xs">
+                <i class="write icon"></i>
+            </a>
+        </td>
     </tr>
 {% endfor %}
 </table>

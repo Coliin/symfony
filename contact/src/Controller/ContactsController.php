@@ -38,14 +38,29 @@ class ContactsController extends Controller
             ->add('valider', SubmitType::class, ['label' => 'Valider'])
             ->getForm();
 
-        return $this->render('contacts/contact-frm.html.twig',array('form' => $form->createView()));
-    }
+        return $this->render('contacts/contact-frm.html.twig',['form' => $form->createView()]);
+}
 
     /**
-     * @Route("/contacts/edit/{index}", name="edit")
+     * @Route("/contacts/edit/{index}", name="contact_edit")
      */
-    public function edit($index){
-        return new Response("Salut c moi".$index);
+    public function edit($index, ContactSessionManager $cManager){
+        $contact = new Contact();
+
+        $form = $this->createFormBuilder($contact)
+            ->add('nom', TextType::class)
+            ->add('prenom', TextType::class)
+            ->add('mail', TextType::class)
+            ->add('tel', TextType::class)
+            ->add('mobile', TextType::class)
+            ->add('valider', SubmitType::class, ['label' => 'Valider'])
+            ->getForm();
+
+        return $this->render('contacts/edit.html.twig',[
+            "form" => $form->createView(),
+            "contacts" =>$cManager->get($index),
+            "title"=>"Modification de contact"
+        ]);
     }
 
     /**
