@@ -6,6 +6,8 @@ namespace App\Controller;
 use App\Models\Contact;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Response;
 use App\Service\ContactSessionManager;
 
@@ -17,14 +19,26 @@ class ContactsController extends Controller
     public function index(ContactSessionManager $contactSessionManager)
     {
         $contactSessionManager->insert(new Contact());
+        //$contactSessionManager->updateSession(null);
         return $this->render('contacts/index.html.twig', ["contacts"=>$contactSessionManager]);
     }
 
     /**
-     * @Route("/contacts/new", name="new")
+     * @Route("/contacts/new", name="contact_new")
      */
     public function new(){
-        return new Response("Salut");
+        $contact = new Contact();
+
+        $form = $this->createFormBuilder($contact)
+            ->add('nom', TextType::class)
+            ->add('prenom', TextType::class)
+            ->add('mail', TextType::class)
+            ->add('tel', TextType::class)
+            ->add('mobile', TextType::class)
+            ->add('valider', SubmitType::class, ['label' => 'Valider'])
+            ->getForm();
+
+        return $this->render('contacts/contact-frm.html.twig',array('form' => $form->createView()));
     }
 
     /**
@@ -35,10 +49,10 @@ class ContactsController extends Controller
     }
 
     /**
-     * @Route("/contacts/update", name="update")
+     * @Route("/contacts/update", name="contact_update", methods={"POST"})
      */
     public function update(){
-        return new Response("Salut c Michel");
+        return new Response("Update");
     }
 
     /**

@@ -11,12 +11,16 @@ class Contact{
     public function __construct()
     {
         $this->nom="PACO";
+        $this->prenom="Paco";
+        $this->mail="michou@gmail.com";
+        $this->tel="0235689748";
+        $this->mobile="0665987415";
     }
 
     /**
      * @return string
      */
-    public function getNom(): string
+    public function getNom()
     {
         return $this->nom;
     }
@@ -24,7 +28,7 @@ class Contact{
     /**
      * @return string
      */
-    public function getPrenom(): string
+    public function getPrenom()
     {
         return $this->prenom;
     }
@@ -32,7 +36,7 @@ class Contact{
     /**
      * @return string
      */
-    public function getMail(): string
+    public function getMail()
     {
         return $this->mail;
     }
@@ -40,7 +44,7 @@ class Contact{
     /**
      * @return string
      */
-    public function getTel(): string
+    public function getTel()
     {
         return $this->tel;
     }
@@ -48,7 +52,7 @@ class Contact{
     /**
      * @return string
      */
-    public function getMobile(): string
+    public function getMobile()
     {
         return $this->mobile;
     }

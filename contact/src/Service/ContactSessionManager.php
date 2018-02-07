@@ -12,7 +12,7 @@ class ContactSessionManager implements IModelManager
     private $session;
 
 
-    private function updateSession($values)
+    public function updateSession($values)
     {
         $this->session->set('contacts',$values);
     }

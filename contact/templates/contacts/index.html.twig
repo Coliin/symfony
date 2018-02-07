@@ -1,3 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block title %}sfjg{% endblock %}
+{% block stylesheets %}{% endblock %}
+{% block body %}
+<table>
+    <caption>Contacts</caption>
 {% for c in contacts.getAll %}
-    {{ c.nom }}
+    <tr>
+        <td>{{ c.nom }}</td><td>{{ c.prenom }}</td><td>{{ c.mail }}</td><td>{{ c.tel }}</td><td>{{ c.mobile }}</td>
+    </tr>
 {% endfor %}
+</table>
+{% endblock %}
+{% block javascripts %}{% endblock %}
