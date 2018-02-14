@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Contact
 {
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -17,27 +18,125 @@ class Contact
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=40)
+     * @ORM\Column(type="string", length=25, name="firstName")
      */
-    private $nom;
+    private $firstname;
 
     /**
-     * @ORM\Column(type="string", length=40)
+     * @ORM\Column(type="string", length=25, name="lastName")
      */
-    private $prenom;
+    private $lastname;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=255)
      */
     private $mail;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string")
      */
-    private $tel;
+    private $phone;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", nullable=true)
      */
     private $mobile;
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFirstName()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * @param mixed $firstName
+     */
+    public function setFirstName($firstname): void
+    {
+        $this->firstname = $firstname;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLastName()
+    {
+        return $this->lastname;
+    }
+
+    /**
+     * @param mixed $lastName
+     */
+    public function setLastName($lastname): void
+    {
+        $this->lastname = $lastname;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMail()
+    {
+        return $this->mail;
+    }
+
+    /**
+     * @param mixed $mail
+     */
+    public function setMail($mail): void
+    {
+        $this->mail = $mail;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * @param mixed $phone
+     */
+    public function setPhone($phone): void
+    {
+        $this->phone = $phone;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMobile()
+    {
+        return $this->mobile;
+    }
+
+    /**
+     * @param mixed $mobile
+     */
+    public function setMobile($mobile): void
+    {
+        $this->mobile = $mobile;
+    }
+
+
 }

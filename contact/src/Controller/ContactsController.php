@@ -71,7 +71,7 @@ class ContactsController extends Controller
     }
 
     /**
-     * @Route("/contacts/display/{index}", name="display")
+     * @Route("/contacts/display/{index}", name="contact_display")
      */
     public function display($index){
         return new Response("Salut c Mi ".$index);
@@ -92,9 +92,9 @@ class ContactsController extends Controller
     }
 
     /**
-     * @Route("/contacts/delete", name="delete")
+     * @Route("/contacts/delete", name="contact_delete")
      */
     public function delete(){
-        return new Response("Salut c Miche");
+
     }
 }

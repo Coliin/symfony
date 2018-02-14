@@ -1,7 +1,11 @@
 {% extends 'base.html.twig' %}
-{% block title %}Modification d'un contact{% endblock %}
-{% block stylesheets %}{% endblock %}
+
 {% block body %}
-    salut
-{% endblock %}
-{% block javascripts %}{% endblock %}
+
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
+
+<a href="{{ url('contacts') }}" class="ui button">Liste des contacts</a>
+
+{% endblock body %}

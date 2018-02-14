@@ -6,10 +6,20 @@
     <caption>Contacts</caption>
 {% for c in contacts.getAll %}
     <tr>
-        <td>{{ c.nom }}</td><td>{{ c.prenom }}</td><td>{{ c.mail }}</td><td>{{ c.tel }}</td><td>{{ c.mobile }}</td>
+        <td>{{ c.nom }}</td>
+        <td>{{ c.prenom }}</td>
+        <td>{{ c.mail }}</td>
+        <td>{{ c.tel }}</td>
+        <td>{{ c.mobile }}</td>
         <td>
+            <a href="{{  path('contact_display',{"index": loop.index}) }}" class="ui icon button xs">
+                <i class="eye icon"></i>
+            </a>
             <a href="{{  path('contact_edit',{"index": loop.index}) }}" class="ui icon button xs">
                 <i class="write icon"></i>
+            </a>
+            <a href="{{  path('contact_delete') }}" class="ui icon button xs">
+                <i class="trash icon"></i>
             </a>
         </td>
     </tr>

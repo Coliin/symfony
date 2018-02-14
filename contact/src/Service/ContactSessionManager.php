@@ -45,7 +45,12 @@ class ContactSessionManager implements IModelManager
 
     public function delete($indexes)
     {
-
+        $keys = array_map(function ($index){return 'id = '.$index;}, $indexes);
+        $keys = implode("or", $indexes);
+        $contacts = $this->findBy($keys);
+        foreach ($contacts as $c){
+            $this->_em->remove($c);
+        }
     }
 
     public function get($index)
@@ -58,7 +63,7 @@ class ContactSessionManager implements IModelManager
 
     }
 
-    public function count()
+    public function size()
     {
 
     }
