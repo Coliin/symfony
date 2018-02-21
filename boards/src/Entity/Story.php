@@ -1,6 +1,6 @@
 <?php
 
-
+namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -68,6 +68,118 @@ class Story
      * })
      */
     private $idproject;
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * @param string $code
+     */
+    public function setCode($code)
+    {
+        $this->code = $code;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getDescriptif()
+    {
+        return $this->descriptif;
+    }
+
+    /**
+     * @param null|string $descriptif
+     */
+    public function setDescriptif($descriptif)
+    {
+        $this->descriptif = $descriptif;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    /**
+     * @param null|string $tags
+     */
+    public function setTags($tags)
+    {
+        $this->tags = $tags;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getStep()
+    {
+        return $this->step;
+    }
+
+    /**
+     * @param null|string $step
+     */
+    public function setStep($step)
+    {
+        $this->step = $step;
+    }
+
+    /**
+     * @return \Developer
+     */
+    public function getIddeveloper()
+    {
+        return $this->iddeveloper;
+    }
+
+    /**
+     * @param \Developer $iddeveloper
+     */
+    public function setIddeveloper($iddeveloper)
+    {
+        $this->iddeveloper = $iddeveloper;
+    }
+
+    /**
+     * @return \Project
+     */
+    public function getIdproject()
+    {
+        return $this->idproject;
+    }
+
+    /**
+     * @param \Project $idproject
+     */
+    public function setIdproject($idproject)
+    {
+        $this->idproject = $idproject;
+    }
 
 
 }

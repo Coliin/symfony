@@ -1,6 +1,6 @@
 <?php
 
-
+namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -57,7 +57,126 @@ class Project
      *   @ORM\JoinColumn(name="idOwner", referencedColumnName="id")
      * })
      */
-    private $idowner;
+    private $owner;
+
+    private $stories;
+
+    public function __construct(){
+        $this->stories=new ArrayCollection();
+    }
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescriptif()
+    {
+        return $this->descriptif;
+    }
+
+    /**
+     * @param string $descriptif
+     */
+    public function setDescriptif($descriptif)
+    {
+        $this->descriptif = $descriptif;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getStartdate()
+    {
+        return $this->startdate;
+    }
+
+    /**
+     * @param \DateTime $startdate
+     */
+    public function setStartdate($startdate)
+    {
+        $this->startdate = $startdate;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDuedate()
+    {
+        return $this->duedate;
+    }
+
+    /**
+     * @param \DateTime $duedate
+     */
+    public function setDuedate($duedate)
+    {
+        $this->duedate = $duedate;
+    }
+
+    /**
+     * @return \Developer
+     */
+    public function getOwner()
+    {
+        return $this->owner;
+    }
+
+    /**
+     * @param \Developer $owner
+     */
+    public function setOwner($owner)
+    {
+        $this->owner = $owner;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getStories()
+    {
+        return $this->stories;
+    }
+
+    /**
+     * @param ArrayCollection $stories
+     */
+    public function setStories($stories)
+    {
+        $this->stories = $stories;
+    }
+
 
 
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5d0aaf4c35c2cd10a0240e9862f1ab5e",
+    "content-hash": "1970b54ef06ac662aeaeb2bc6a69856d",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -2448,20 +2448,20 @@
         },
         {
             "name": "symfony/maker-bundle",
-            "version": "v1.1.0",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/maker-bundle.git",
-                "reference": "14fa7ef58f662a8cf83508aa7df7b1002fcccf90"
+                "reference": "cc06f192f2a97be4c4b77af833f3a276e6ba63a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/maker-bundle/zipball/14fa7ef58f662a8cf83508aa7df7b1002fcccf90",
-                "reference": "14fa7ef58f662a8cf83508aa7df7b1002fcccf90",
+                "url": "https://api.github.com/repos/symfony/maker-bundle/zipball/cc06f192f2a97be4c4b77af833f3a276e6ba63a9",
+                "reference": "cc06f192f2a97be4c4b77af833f3a276e6ba63a9",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.0.8",
+                "php": "^7.1.3",
                 "symfony/config": "^3.4|^4.0",
                 "symfony/console": "^3.4|^4.0",
                 "symfony/dependency-injection": "^3.4|^4.0",
@@ -2470,7 +2470,6 @@
                 "symfony/http-kernel": "^3.4|^4.0"
             },
             "require-dev": {
-                "allocine/twigcs": "^3.0",
                 "friendsofphp/php-cs-fixer": "^2.8",
                 "symfony/phpunit-bridge": "^3.4|^4.0",
                 "symfony/process": "^3.4|^4.0"
@@ -2496,15 +2495,13 @@
                     "homepage": "https://symfony.com/contributors"
                 }
             ],
-            "description": "Symfony Maker helps you create empty commands, controllers, form classes, tests and more so you can forget about writing boilerplate code.",
-            "homepage": "https://symfony.com/doc/current/bundles/SymfonyMakerBundle/index.html",
             "keywords": [
                 "code generator",
                 "generator",
                 "scaffold",
                 "scaffolding"
             ],
-            "time": "2018-02-19T19:05:18+00:00"
+            "time": "2017-11-29T15:24:54+00:00"
         },
         {
             "name": "symfony/orm-pack",
