@@ -4,6 +4,9 @@
 /public/bundles/
 /var/
 /vendor/
+/public/assets/themes/
+/public/assets/components/
+
 ###< symfony/framework-bundle ###
 
 ###> symfony/web-server-bundle ###

@@ -22,7 +22,7 @@ class TagsController extends Controller{
     }
     /**
      * @Route("tag/update/{id}", name="tag_update")
-     */
+    */
     public function update(Tag $tag,TagsGui $tagsGui){
         $tagsGui->frm($tag);
         return $tagsGui->renderView('Tags/frm.html.twig');
@@ -38,6 +38,6 @@ class TagsController extends Controller{
             $tag->setColor($request->get("color"));
             $tagRepo->update($tag);
         }
-        return $this->forward("App\Controller\TagsController::tags");
+        return $this->forward("App\Controller\TagsController::index");
     }
 }
