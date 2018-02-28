@@ -2,13 +2,13 @@
 
 namespace App\Controller;
 
+use App\Entity\Tag;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use App\Repository\TagRepository;
 use App\Services\semantic\TagsGui;
-use Zend\Code\Generator\DocBlock\Tag;
 
 class TagsController extends Controller{
 
