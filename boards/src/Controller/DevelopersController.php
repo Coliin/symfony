@@ -18,7 +18,7 @@ class DevelopersController extends AbstractController
      */
     public function index(DevelopersGui $gui,DevelopersRepository $devRepo){
         $devs=$devRepo->findAll();
-        $dt=$gui->dataTable($devs);
+        $gui->dataTable($devs);
         return $gui->renderView("Developers/index.html.twig");
     }
 
@@ -39,6 +39,14 @@ class DevelopersController extends AbstractController
             $dev->setIdentity($request->get("identity"));
             $devRepo->update($dev);
         }
+        return $this->forward("App\Controller\DevelopersController::index");
+    }
+
+    /**
+     * @Route("developers/delete/{id}", name="developers_delete")
+     */
+    public function delete(Developer $dev,DevelopersRepository $devRepo){
+        $devRepo->delete($dev);
         return $this->forward("App\Controller\DevelopersController::index");
     }
 }

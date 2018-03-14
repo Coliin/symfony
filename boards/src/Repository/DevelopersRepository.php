@@ -18,4 +18,9 @@ class DevelopersRepository extends ServiceEntityRepository
         $this->_em->persist($dev);
         $this->_em->flush();
     }
+
+    public function delete(Developer $dev){
+        $this->_em->remove($dev);
+        $this->_em->flush();
+    }
 }
