@@ -27,6 +27,10 @@ class DevelopersGui extends JquerySemantic
         return $dt;
     }
 
+    public function buttonNew(){
+        $btn = $btn
+    }
+
     public function frm(Developer $developer){
         $frm=$this->_semantic->dataForm("frm-developer", $developer);
         $frm->setFields(["id","identity","submit","cancel"]);
