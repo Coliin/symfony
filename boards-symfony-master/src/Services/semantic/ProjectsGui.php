@@ -5,6 +5,7 @@ namespace App\Services\semantic;
 
 use Ajax\semantic\html\elements\HtmlLabel;
 use Ajax\semantic\html\elements\HtmlInput;
+use Ajax\semantic\html\elements\HtmlSegment;
 use Ajax\service\JArray;
 use App\Entity\Story;
 use Ajax\semantic\html\content\HtmlListItem;
@@ -95,5 +96,23 @@ class ProjectsGui extends SemanticGui{
 		$list->addClass("middle aligned relaxed");
 		return $list;
 	}
+
+    public function board($steps, TagRepository $tagRepo) {
+        $grid = $this->_semantic->htmlGrid("steps-grid");
+        foreach ($steps as $step){
+            $col = $grid->addCol();
+            $segTitle = new HtmlSegment("",'<i class="step forward icon"></i>&nbsp;'.$step->getTitle());
+            $segTitle->addClass("secondary");
+            $segContent = new HtmlSegment("step-".$step->getId());
+            $segContent->addClass("drop-zone");
+            $segContent->setProperty("data-ajax", $step->getTitle());
+            $segTitle->setAttachment($segContent,"top");
+            foreach ($step->stories as $story){
+                $segContent->addContent($this->displayStory($tagRepo, $story));
+            }
+            $col->setContent([$segTitle,$segContent]);
+        }
+        return $grid;
+    }
 }
 
