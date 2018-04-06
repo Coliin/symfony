@@ -8,6 +8,7 @@ class TasksGui extends SemanticGui{
 
     public function dataTable($tasks, $type){
         $dt = $this->_semantic->dataTable("dt-".$type, Task::class, $tasks);
+        $dt->setIdentifierFunction("getId");
         $dt->setFields(['content', 'story']);
         $dt->setCaptions(['Content', 'Story']);
         $dt->setValueFunction('content', function($v,$task){
@@ -33,7 +34,7 @@ class TasksGui extends SemanticGui{
         $df->setFields(["content\n","id\n","content","idStory"]);
         $df->setCaptions(["Modification","","Content","Story"]);
         $df->fieldAsMessage(0,["icon"=>"info circle"]);
-        //$df->fieldAsHidden(1);
+        $df->fieldAsHidden(1);
         $df->fieldAsDropDown("idStory",JArray::modelArray($di, 'getId', 'getDescriptif'),["rules"=>"empty"]);
         $df->fieldAsInput('content',["rules"=>"empty"]);
         $df->setValidationParams(["on"=>"blur","inline"=>true]);
