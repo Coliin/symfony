@@ -1,8 +1,40 @@
 {% extends "base.html.twig" %}
 {%  block body %}
-<div class="ui tall stacked segment">
-  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-</div>
+
+<div class="ui segment">
+    <div class="ui grid container" style="margin-top: 10px">
+        {% for model in models %}
+        <div class="eight wide column">
+            <div class="ui item">
+                <div class="ui image" style="float: left">
+                    <i class= "user icon huge icon"></i>
+                </div>
+                <div class="content">
+                    <div class="extra">
+                        <span>{{ model }} items</span>
+                    </div>
+                    <div class="header" style="font-size: 20px;">
+                        <b>{{ model }}</b>
+                    </div>
+                    <div class="ui basic buttons">
+                        <button class="ui button">
+                            {# Je n'ai pas réussi à trouver un moyen d'enlever la majuscule #}
+                            <a href="{{ model }}" class="item" >
+                                <i class="eye icon"></i>
+                                See all
+                            </a>
+                        </button>
+                        <button class="ui button">
+                            <i class="plus icon"></i>
+                            Add new...
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}

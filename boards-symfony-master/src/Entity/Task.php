@@ -26,7 +26,7 @@ class Task
      *
      * @ORM\Column(name="content", type="text", length=65535, nullable=false)
      */
-    private $content;
+    private $content = "";
 
     /**
      * @var \App\Entity\Story
@@ -37,6 +37,18 @@ class Task
      * })
      */
     private $story;
+
+    public function __construct() {
+        $this->idStory = "";
+        $this->content = "New Task";
+    }
+    /**
+     * @return int
+     */
+    public function getId(){
+        return $this->id;
+    }
+
 	/**
 	 * @return string
 	 */
@@ -65,6 +77,8 @@ class Task
 		$this->content = $content;
 	}
 
-
+    public function __toString(){
+        return $this->content;
+    }
 
 }

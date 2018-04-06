@@ -59,4 +59,12 @@ class Developer
 	public function __toString(){
     	return $this->identity;
     }
+
+    public function count(){
+        $qb = createQueryBuilder('developer');
+        return $qb
+            ->select('count(this->id)')
+            ->getQuery()
+            ->getSingleScalarResult();
+	}
 }

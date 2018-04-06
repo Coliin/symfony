@@ -24,14 +24,14 @@ class DevelopersGui extends SemanticGui{
 	
 	public function dataForm($developer,$type,$di=null){
 		$df=$this->_semantic->dataForm("frm-".$type,$developer);
-		$df->setFields(["identity\n","id\n","identity"]);
-		$df->setCaptions(["Modification","","Identity"]);
-		$df->fieldAsMessage(0,["icon"=>"info circle"]);
-		$df->fieldAsHidden(1);
-		$df->fieldAsInput("identity",["rules"=>"empty"]);
-		$df->setValidationParams(["on"=>"blur","inline"=>true]);
-		$df->setSubmitParams("developers/update","#frm",["attr"=>"","hasLoader"=>false]);
-		return $df;
+        $df->setFields(["identity\n","id\n","identity"]);
+        $df->setCaptions(["Modification","","Identity"]);
+        $df->fieldAsMessage(0,["icon"=>"info circle"]);
+        $df->fieldAsHidden(1);
+        $df->fieldAsInput("identity",["rules"=>"empty"]);
+        $df->setValidationParams(["on"=>"blur","inline"=>true]);
+        $df->setSubmitParams("developers/update","#frm",["attr"=>"","hasLoader"=>false]);
+        return $df;
 	}
 	
 }
